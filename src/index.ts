@@ -228,8 +228,6 @@ export type JWTOption<
 	'EdDSA'
 	] as const
 
-	const SYMMETRIC_VERIFICATION_ALGS = ['HS256', 'HS384', 'HS512'] as const
-
 export const jwt = <
 	const Name extends string = 'jwt',
 	const Schema extends TSchema | undefined = undefined
@@ -242,7 +240,7 @@ export const jwt = <
 }: // End JWT Payload
 JWTOption<Name, Schema>) => {
 	if (!secret && !jwks) throw new Error('Either "secret" or "jwks" must be provided')
-	
+
 	const getKeyForAlg = (alg: string) => {
 		return importJWK(secret as JWK, alg)
 	}
