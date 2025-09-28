@@ -20,7 +20,8 @@
 			"types": "./dist/index.d.ts",
 			"import": "./dist/index.mjs",
 			"require": "./dist/cjs/index.js"
-		}
+		},
+		"./src/index.ts": "./src/index.ts"
 	},
 	"bugs": "https://github.com/elysiajs/elysia-jwt/issues",
 	"homepage": "https://github.com/elysiajs/elysia-jwt",
